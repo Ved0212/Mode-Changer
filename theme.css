@@ -77,7 +77,7 @@ span{
     font-family: 'Satisfy', cursive;
     font-size: 20px;
 }
-.info a{
+.info button{
     color: var(--primary-color);
     background:var(--secondary-color);
     padding: 10px 18px;
@@ -98,7 +98,7 @@ span{
     -ms-transition: 1s;
     -o-transition: 1s;
 }
-.info a:hover{
+.info button:hover{
     background-color:#ff2600;
     letter-spacing: 2px ;
 

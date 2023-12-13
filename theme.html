@@ -29,7 +29,7 @@
     <div class="info">
         <h1>I'm <span>Dakota</span> Johnson</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae recusandae molestias <br>reprehenderit est perspiciatis asperiores iste iusto ex ipsa dignissimos.</p>
-        <a href="">Download CV</a>
+        <button id="downloadButton">Download CV</button>
     </div>
     <div class="img-box">
         <img src="helper/pattern.png" class="back-img">
@@ -50,7 +50,29 @@
         }else{
             icon.src="helper/moon.png";
         }
-}
+}       
+function downloadCV() {
+            // Create a Blob containing the CV content
+            const cvContent = 'When I wrote this code, only God and I understood what I did. Now only God knows';
+            const blob = new Blob([cvContent], { type: 'text/plain' });
+
+            // Create a download link
+            const a = document.createElement('a');
+            a.href = window.URL.createObjectURL(blob);
+            a.download = 'Cv.txt'; // Set the desired file name
+
+            // Append the link to the document and trigger the download
+            document.body.appendChild(a);
+            a.click();
+
+            // Clean up
+            document.body.removeChild(a);
+        }
+
+        // Attach the download function to the button click event
+        const downloadButton = document.getElementById('downloadButton');
+        downloadButton.addEventListener('click', downloadCV);
+
     </script>
 </body>
 </html>
